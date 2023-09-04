@@ -225,11 +225,11 @@
   letter-spacing: -1px;
 }
 
-.gap-1 {
+.gap-lg {
   gap: 200px;
 }
 
-.gap-2 {
+.gap-sm {
   gap: 40px;
 }
 
