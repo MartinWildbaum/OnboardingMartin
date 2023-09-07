@@ -64,10 +64,10 @@
 }
 
 .m-0 {
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
 }
 
 .mt-0 {
@@ -96,9 +96,9 @@
 
 .mt-ng {
   margin-top: -20px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
 }
 
 .mr-sm {
@@ -110,7 +110,7 @@
 }
 
 .mb-0 {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .mb-xs {
@@ -135,9 +135,9 @@
 
 .mb-ng {
   margin-top: 0px;
-  margin-right: 0px;
+  margin-right: 0;
   margin-bottom: -65px;
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 .ml-sm {
@@ -310,7 +310,7 @@
   border-top-right-radius: 20px;
 }
 
-.ls-negative {
+.letter-spacing-negative {
   letter-spacing: -1px;
 }
 
@@ -334,54 +334,50 @@
   gap: 200px;
 }
 
-.dark-blue-gradient {
+.bg-dark-blue-gradient {
   background: linear-gradient(46.99deg, #0F58B7 -4.4%, #62D9FF 120.42%);
 }
 
-.light-blue-gradient {
+.bg-light-blue-gradient {
   background: linear-gradient(46.77deg, #0F99B7 -0.79%, #69ECDC 131.52%);
 }
 
-.gradient-text {
+.background-clip-text {
   -webkit-background-clip: text;
 }
 
-.transparent-color {
+.text-transparent {
   color: transparent;
 }
 
-.div-gradient {
+.dark-blue-gradient-for-multi-line-text {
   background-image: linear-gradient(46.99deg, #0F58B7 -4.4%, #62D9FF 120.42%);
   display: inline-block;
   -webkit-background-clip: text;
 }
 
-.white-font {
+.font-white {
   color: white;
 }
 
-.white-background {
+.background-white {
   background-color: white;
   z-index: 1;
 }
 
-.slight-dark {
+.opacity-2 {
   opacity: 2;
 }
 
-.slight-light {
+.opacity-1 {
   opacity: 0.2;
 }
 
-.st-border {
+.standard-border {
   border: 1px solid #1C1C1C;
 }
 
-.white-border {
-  border: 0.5px solid white;
-}
-
-.thin-border {
+.border-thin {
   border: 0.9px solid rgba(0, 0, 0, 0.03);
 }
 
@@ -445,19 +441,19 @@
   height: 300px;
 }
 
-.transparent-border {
+.border-transparent {
   border-width: 0;
 }
 
-.st-shadow {
-  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.25);
+.standard-shadow {
+  box-shadow: 2px 2px 10px 0 rgba(0, 0, 0, 0.25);
 }
 
 .primary-background-color {
   background-color: white;
 }
 
-.secondary-background {
+.secondary-background-color {
   background-color: rgb(242, 247, 255);
 }
 
@@ -483,14 +479,14 @@
      object-fit: contain;
 }
 
-.fit-photo {
+.object-fit-contain {
   -o-object-fit: contain;
      object-fit: contain;
 }
 
 .custom-list {
   list-style-type: none;
-  padding-left: 0px;
+  padding-left: 0;
 }
 .custom-list > li {
   background-image: url("/img/tic.png");
@@ -512,5 +508,5 @@
 }
 
 body {
-  margin: 0px;
+  margin: 0;
 }/*# sourceMappingURL=excercise_one.css.map */

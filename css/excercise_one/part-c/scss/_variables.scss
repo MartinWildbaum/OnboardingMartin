@@ -1,10 +1,9 @@
 $default-font-family: 'Poppins', sans-serif;
-$primary-color: black;
-$secondary-color: rgba(15, 88, 183, 1);
-$tertiary-color: rgba(155, 199, 255, 1);
-$background-color: white;
-$secondary-background-color: rgba(242, 247, 255, 1);
-$tertiary-background-color: rgba(15, 88, 183, 1);
+$dark: black;
+$primary-color: rgba(15, 88, 183, 1);
+$primary-color-light: rgba(155, 199, 255, 1);
+$light: white;
+$secondary-color: rgba(242, 247, 255, 1);
 
 @mixin padding($top: null, $right: null, $bottom: null, $left: null) {
   @if $top != null { padding-top: $top; }
