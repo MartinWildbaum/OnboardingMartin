@@ -1,0 +1,58 @@
+$default-font-family: 'Poppins', sans-serif;
+$dark: black;
+$primary-color: rgba(15, 88, 183, 1);
+$primary-color-light: rgba(155, 199, 255, 1);
+$light: white;
+$secondary-color: rgba(242, 247, 255, 1);
+
+@mixin padding($top: null, $right: null, $bottom: null, $left: null) {
+  @if $top != null { padding-top: $top; }
+  @if $right != null { padding-right: $right; }
+  @if $bottom != null { padding-bottom: $bottom; }
+  @if $left != null { padding-left: $left; }
+}
+
+@mixin margin($top: null, $right: null, $bottom: null, $left: null) {
+  @if $top != null { margin-top: $top; }
+  @if $right != null { margin-right: $right; }
+  @if $bottom != null { margin-bottom: $bottom; }
+  @if $left != null { margin-left: $left; }
+}
+
+$font-s: (
+  xsmall: 14px,
+  small: 16px,
+  medium: 20px,
+  large: 30px,
+  xlarge: 35px,
+  xxlarge: 48px,
+  xxxlarge: 60px
+);
+
+$font-w: (
+  light: 300,
+  medium: 400,
+  bold: 500,
+  xbold: 600
+);
+
+$width: (
+  xsmall: 14px,
+  small: 17px,
+  medium: 30px,
+  large: 240px,
+  xlarge: 250px,
+  xxlarge: 345px,
+  xxxlarge: 450px,
+  complete:100%
+);
+
+$height: (
+  xsmall: 15px,
+  small: 25px,
+  medium: 30px,
+  large: 40px,
+  xlarge: 210px,
+  xxlarge: 255px,
+  xxxlarge: 300px
+);
