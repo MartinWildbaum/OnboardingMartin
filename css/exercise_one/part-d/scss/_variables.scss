@@ -1,0 +1,159 @@
+$default-font-family: 'Poppins', sans-serif;
+$dark: black;
+$primary-color: rgba(15, 88, 183, 1);
+$primary-color-light: rgba(155, 199, 255, 1);
+$light: white;
+$secondary-color: rgba(242, 247, 255, 1);
+
+@mixin padding($top: null, $right: null, $bottom: null, $left: null) {
+  @if $top != null { padding-top: $top; }
+  @if $right != null { padding-right: $right; }
+  @if $bottom != null { padding-bottom: $bottom; }
+  @if $left != null { padding-left: $left; }
+}
+
+@mixin margin($top: null, $right: null, $bottom: null, $left: null) {
+  @if $top != null { margin-top: $top; }
+  @if $right != null { margin-right: $right; }
+  @if $bottom != null { margin-bottom: $bottom; }
+  @if $left != null { margin-left: $left; }
+}
+
+$font-s: (
+  sm: (
+    xsmall: 12px,
+    small: 14px,
+    medium: 16px,
+    large: 18px,
+    xlarge: 20px,
+    xxlarge: 25px,
+    xxxlarge: 36px
+  ),
+  md: (
+    xsmall: 13px,
+    small: 15px,
+    medium: 18px,
+    large: 22px,
+    xlarge: 27px,
+    xxlarge: 34px,
+    xxxlarge: 42px
+  ),
+  lg: (
+    xsmall: 14px,
+    small: 16px,
+    medium: 20px,
+    large: 30px,
+    xlarge: 35px,
+    xxlarge: 48px,
+    xxxlarge: 60px
+  )
+  );
+
+$font-w: (
+  light: 300,
+  medium: 400,
+  bold: 500,
+  xbold: 600
+);
+
+$width: (
+  sm: (
+    xsmall: 14px,
+    small: 17px,
+    medium: 30px,
+    large: 240px,
+    xlarge: 250px,
+    xxlarge: 345px,
+    xxxlarge: 450px,
+    100:100%
+  ),
+  md: (
+    xsmall: 14px,
+    small: 17px,
+    medium: 30px,
+    large: 240px,
+    xlarge: 250px,
+    xxlarge: 345px,
+    xxxlarge: 450px,
+    100:100%
+  ),
+  lg: (
+    xsmall: 14px,
+    small: 17px,
+    medium: 30px,
+    large: 240px,
+    xlarge: 250px,
+    xxlarge: 345px,
+    xxxlarge: 450px,
+    60: 60%,
+    100:100%
+  )
+  );
+
+
+$height: (
+  sm: (
+    xsmall: 10px,
+    small: 16px,
+    medium: 20px,
+    large: 28px,
+    xlarge: 165px,
+    xxlarge: 200px,
+    xxxlarge: 220px,
+    100: 100%
+  ),
+  md: (
+    xsmall: 12px,
+    small: 20px,
+    medium: 25px,
+    large: 32px,
+    xlarge: 140px,
+    xxlarge: 230px,
+    xxxlarge: 260px,
+    100: 100%
+  ),
+  lg: (
+    xsmall: 15px,
+    small: 25px,
+    medium: 30px,
+    large: 40px,
+    xlarge: 210px,
+    xxlarge: 255px,
+    xxxlarge: 300px,
+    80: 80%,
+    100: 100%
+  )
+);
+
+$line-height: (
+  sm: (
+    small: 20px,
+    medium: 27px,
+    large: 32.5px,
+    xlarge: 47px
+  ),
+  lg: (
+    small: 19.5px,
+    medium: 37.8px,
+    large: 52px,
+    xlarge: 65px
+  )
+);
+
+$gap: (
+  md: (
+    xsmall:7px,
+    small: 15px,
+    medium: 30px,
+    large: 50px,
+    xlarge: 150px
+  ),
+  lg: (
+    xsmall:10px,
+    small: 20px,
+    medium: 40px,
+    large: 70px,
+    xlarge: 200px
+  )
+);
+
