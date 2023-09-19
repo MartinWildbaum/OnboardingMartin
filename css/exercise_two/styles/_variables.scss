@@ -2,3 +2,33 @@
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
+
+
+$default-font-family: 'Poppins', sans-serif;
+
+$dark-gradient: linear-gradient(46.99deg, #0F58B7 -4.4%, #62D9FF 120.42%);
+$light-gradient: linear-gradient(46.77deg, #0F99B7 -0.79%, #69ECDC 131.52%);
+
+$custom-colors: (
+  "custom-blue":rgba(15, 88, 183, 1),
+  "custom-blue-light": rgba(155, 199, 255, 1),
+  "custom-ivory": rgba(242, 247, 255, 1),
+);
+
+$custom-spacing: (
+  "-2": -3.5rem,
+  "-1": -0.5rem,
+  "6": 6rem,
+  "7": 8rem,
+  "8": 11rem,
+);
+
+$custom-fs: (
+  "7": 0.8rem,
+  "0": 3.5rem,
+);
+
+
+$theme-colors: map-merge($map1: $theme-colors, $map2: $custom-colors);
+$font-sizes: map-merge($map1: $font-sizes, $map2: $custom-fs);
+$spacers: map-merge($map1: $spacers, $map2: $custom-spacing);

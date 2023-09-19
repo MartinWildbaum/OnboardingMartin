@@ -3,15 +3,359 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Exercise two CSS</title>
   <link rel="stylesheet" type="text/css" href="styles/styles.css">
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-</head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <button class="btn btn-primary">hola</button>
-  <div class="alert alert-success">
-    ¡Bootstrap está funcionando correctamente!
-</div>
+  <nav class="container align-items-center d-flex justify-content-between mb-7 pt-5">
+    <a href="#">
+      <img src="../../../img/logo_with_name.png" alt="Firm's logo">
+    </a>
+    <div class="d-flex justify-content-between gap-4 align-items-center d-none d-lg-flex">
+      <a href="#" class="text-black text-decoration-none fs-6 fw-light letter-spacing-negative">Características</a>
+      <a href="#" class="text-black text-decoration-none fs-6 fw-light letter-spacing-negative">Precio</a>
+      <a href="#" class="text-black text-decoration-none fs-6 fw-light letter-spacing-negative">Contacto</a>
+    </div>
+    <div class="d-flex justify-content-end gap-4 align-items-center d-none d-lg-flex">
+      <a href="#" class="text-black text-decoration-none fs-6 fw-light letter-spacing-negative">Ingresar</a>
+      <a href="#" class="text-black text-decoration-none fw-bold letter-spacing-negative fs-6 align-items-center rounded border border-dark shadow d-flex justify-content-center py-1 px-5 text-nowrap btn active">Registrarse gratis</a>
+    </div>
+    <img class="d-lg-none" src="../../../img/menu.png" alt="Menu">
+  </nav>
+  <div class="container d-flex flex-column flex-lg-row justify-content-between gap-5">
+    <div class="d-flex flex-column justify-content-between">
+      <div class="d-flex justify-content-between flex-column gap-2">
+        <div class="align-items-center d-flex d-none d-lg-flex gap-2">
+          <img src="../../../img/small_logo.png" alt="Logo">
+          <p class="letter-spacing-negative fw-medium m-0">Empresas</p>
+        </div>
+        <div class="div-gradient">
+          <h1 class="fs-xl-0 fw-bolder lh-sm">Generá acciones que <span class="text-transparent">sorprendan a tu equipo y clientes</span></h1>
+        </div>
+      </div>
+      <div class="d-flex my-4 gap-3">
+        <button class="btn shadow rounded px-5 px-lg-4 px-xl-5 py-1 border-0 dark-blue-gradient text-white fs-6 fw-normal text-uppercase text-nowrap">
+          registrate acá
+        </button>
+        <button class="btn border border-dark shadow rounded py-1 px-4 px-xl-5 bg-white fs-6 fw-medium text-uppercase text-nowrap d-none d-lg-flex btn active">
+          ver video tutorial
+        </button>
+      </div>
+      <div class="d-flex flex-column justify-content-between gap-3">
+        <div class="d-flex align-items-center gap-2 d-none d-lg-flex">
+          <div class="align-items-center light-blue-gradient rounded d-flex justify-content-center">
+            <img class="p-2" src="../../../img/user_icon.png" alt="User">
+          </div>
+          <p class="fs-5 fw-bold letter-spacing-negative text-nowrap mb-0">Para personas &nbsp; &gt;</p>
+        </div>
+        <div class="fs-6 fw-light letter-spacing-negative d-none d-lg-flex">
+          <p class="m-0">En PlanIT también podés encontrar regalos para tu familia y amigos.</p>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex gap-3 carrousel">
+      <div class="d-flex flex-lg-column gap-3 w-100">
+        <div class="rounded d-flex justify-content-center position-relative w-100">
+          <img class="carrousel-photo" src="../../../img/eventos.png" alt="Eventos">
+          <div class="bottom-0 position-absolute">
+            <p class="text-white fs-6 fw-bold letter-spacing-negative text-center">Eventos</p>
+          </div>
+        </div>
+        <div class="rounded d-flex justify-content-center position-relative w-100">
+          <img class="carrousel-photo" src="../../../img/regalos.png" alt="Regalos">
+          <div class="bottom-0 position-absolute">
+            <p class="text-white fs-6 fw-bold letter-spacing-negative text-center">Regalos<br> <span class="text-white fs-6 fw-bold letter-spacing-negative text-center d-none d-lg-flex"> personalizados</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex flex-lg-column gap-3 w-100">
+        <div class="rounded d-flex justify-content-center position-relative w-100">
+          <img class="carrousel-photo" src="../../../img/catering.png" alt="Catering">
+          <div class="bottom-0 position-absolute">
+            <p class="text-white fs-6 fw-bold letter-spacing-negative text-center">Catering</p>
+          </div>
+        </div>
+        <div class="rounded d-flex justify-content-center position-relative w-100">
+          <img class="carrousel-photo" src="../../../img/merchandising.png" alt="Merchandising">
+          <div class="bottom-0 position-absolute">
+            <p class="text-white fs-6 fw-bold letter-spacing-negative text-center">Merchandising</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-column gap-2 mt-3 d-lg-none">
+      <div class="d-flex align-items-center gap-2">
+        <div class="align-items-center light-blue-gradient rounded d-flex justify-content-center">
+          <img class="p-2" src="../../../img/user_icon.png" alt="User">
+        </div>
+        <p class="fw-bold letter-spacing-negative text-nowrap m-0 fs-5">Para personas &nbsp; &gt;</p>
+      </div>
+      <div class="fw-light letter-spacing-negative fs-6 mt-2">
+        <p class="m-0">En PlanIT también podés encontrar regalos para tu familia y amigos.</p>
+      </div>
+    </div>
+  </div>
+  <div class="container align-items-center d-flex flex-column justify-content-center mt-8">
+    <div class="d-flex justify-content-center mb-1">
+      <p class="fs-4 fs-1-lg fw-bold letter-spacing-negative text-center">Trabajamos día a día junto a empresas que confían en nosotros</p>
+    </div>
+    <div class="d-flex flex-lg-column carrousel w-100 gap-2">
+      <div class="d-flex justify-content-center mt-2 gap-2 gap-lg-4">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/basf.png" alt="BASF">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/bcw.png" alt="BCW">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/dlocal.png" alt="dLocal">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/equifax.png" alt="Equifax">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/genexus.png" alt="Genexus">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/globant.png" alt="Globant">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/hsbc.png" alt="HSBC">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/sura_inv.png" alt="Sura">
+      </div>
+      <div class="d-flex justify-content-center gap-2 gap-lg-4">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/pepsico.png" alt="Pepsico">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/rootstrap.png" alt="Rootstrap">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/semm.png" alt="Semm">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/pwc.png" alt="pwc">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/la roche.png" alt="Roche">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/hsbc.png" alt="HSBC">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/manpower.png" alt="Manpower">
+        <img class="object-fit-contain my-1 mx-1" src="../../../img/samsung_orig_wordmark_black_rgb.png" alt="Samsung">
+      </div>
+    </div>
+  </div>
+  <div class="container d-flex flex-column justify-content-between gap-5 gap-lg-8 mt-8">
+    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center gap-lg-7 gap-4">
+      <div class="d-flex justify-content-between flex-column">
+        <p class="background-clip-text dark-blue-gradient fw-bolder fs-2 text-transparent m-0 pb-1">
+          Ahorrá tiempo
+        </p>
+        <p class="fw-bold fs-3 lh-base m-0 pt-1 d-none d-lg-flex text-left w-100">
+          Planificá tu año en base a tu presupuesto y programá tus acciones. Línea directa entre proveedores y empresas
+        </p>
+      </div>
+      <div>
+        <img class="rounded w-100-mobile" src="../../../img/man_working.png" alt="Hombre trabajando">
+      </div>
+      <p class="fw-bold fs-3 lh-base m-0 pt-1 d-lg-none text-center">
+        Planificá tu año en base a tu presupuesto y programá tus acciones. Línea directa entre proveedores y empresas
+      </p>
+    </div>
+    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center gap-lg-7 gap-4">
+      <p class="background-clip-text dark-blue-gradient text-transparent fs-2 fw-bolder m-0 pb-1 d-lg-none">
+        Comprendé a tu equipo
+      </p>
+      <div>
+        <img class="rounded w-100-mobile" src="../../../img/team_working.png" alt="Trabajo en equipo">
+      </div>
+      <div class="d-flex justify-content-between flex-column text-lg-start text-center">
+        <p class="background-clip-text dark-blue-gradient fs-2 text-transparent fw-bolder m-0 pb-1 d-none d-lg-flex">
+          Comprendé a tu equipo
+        </p>
+        <p class="fw-bold fs-3 lh-base pt-1 m-0">
+          Obtené feedback para mejorar tus acciones en cada etapa.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid bg-ivory-white mt-8 mt-lg-7">
+    <div class="container d-flex flex-column justify-content-between mb-ng pt-5">
+      <div class="py-4">
+        <p class="fw-bolder text-center fs-1 lh-base back fw-bold-mobile m-0">
+          ¡Una nueva forma de llevar adelante tus acciones!
+        </p>
+      </div>
+      <div class="d-flex flex-column flex-lg-row justify-content-center gap-2 gap-sm-3 text-nowrap">
+        <div class="d-flex flex-column align-items-center justify-content-center border-thin shadow w-xxl bg-white rounded w-100-mobile h-xl-medium col-lg-4 py-4 py-lg-2">
+          <h1 class="fw-bolder fs-0 background-clip-text dark-blue-gradient text-transparent m-0">
+            1.500+
+          </h1>
+          <p class="fw-bold fs-6 mb-2">
+            propuestas innovadoras
+          </p>
+        </div>
+        <div class="d-flex flex-column align-items-center justify-content-center border-thin shadow w-xxl bg-white rounded w-100-mobile h-xl-medium col-lg-4  py-3">
+          <h1 class="fw-bolder fs-0 background-clip-text dark-blue-gradient text-transparent m-0">
+            200+
+          </h1>
+          <p class="fw-bold fs-6 mb-2">
+            emprendedores uruguayos
+          </p>
+        </div>
+        <div class="d-flex flex-column align-items-center justify-content-center border-thin shadow w-xxl bg-white rounded w-100-mobile h-xl-medium col-lg-4  py-3">
+          <h1 class="fw-bolder fs-0 background-clip-text dark-blue-gradient text-transparent m-0">
+            10.000+
+          </h1>
+          <p class="fw-bold fs-6 mb-2">
+            envíos realizados
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid bg-custom-ivory">
+    <div class="container d-flex flex-column justify-content-between gap-5 pt-lg-8 pt-7 pb-5 mt--2">
+      <div class="w-75">
+        <h4 class="fw-bold fs-3 text-custom-blue m-0 lh-sm">
+          Qué beneficios ofrece PlanIT para tu empresa
+        </h4>
+      </div>
+      <div class="d-flex justify-content-between align-items-center gap-xxl-8 gap-xl-5 gap-lg-4 lh-sm">
+        <img class="rounded object-fit-contain d-none d-lg-flex" src="../../../img/woman_working.png" alt="Mujer trabajando">
+        <div class="fs-6 fw-normal mt-1">
+          <p class="mb-4">
+            Buscamos contribuir con emprendedores locales, con empresas y con el entorno <span class="fw-custom">a través de un modelo de triple impacto<span class="d-lg-none"><b>.</b></span> </span>
+          </p>
+          <ul class="custom-list">
+            <li><p>Conectamos emprendimientos <span class="fw-custom">uruguayos</span> con organizaciones</p></li>
+            <li><p>Apoyamos emprendimientos enfocados en <span class="fw-custom">productos inclusivos y sustentables</span></p></li>
+            <li><p>Trabajamos en conjunto con empresas para realizar <span class="fw-custom">acciones innovadoras</span> y con un impacto positivo en sus equipos, en sus clientes y en el ambiente.</p></li>
+          </ul>
+          <button class="btn shadow rounded border-0 dark-blue-gradient text-white fs-6 fw-bold px-5 py-1 mt-5 mt-lg-2">
+            SOLICITÁ TU PRUEBA GRATIS
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container d-flex flex-column justify-content-between mt-lg-8 mt-6 my-5">
+    <div class="d-flex justify-content-between position-relative mb-5 mb-lg-6">
+      <h3 class="background-clip-text dark-blue-gradient fw-bolder fs-2 text-transparent m-0">
+        Nuestros clientes
+      </h3>
+      <div class="position-absolute bottom-0 end-0 d-flex justify-content-between gap-6 d-none d-lg-flex">
+        <img class="opacity-25" src="../../../img/left_arrow.png" alt="&lt;">
+        <img src="../../../img/right_row.png" alt="&gt;">
+      </div>
+    </div>
+    <div class="d-flex justify-content-between gap-4">
+      <div class="d-flex flex-column position-relative justify-content-between">
+        <div class="d-flex justify-content-between">
+          <img class="reduce-size" src="../../../img/quote_vector.png" alt="&quot;">
+          <div class="d-lg-none position-absolute end-0">
+            <div class="d-flex justify-content-between gap-6">
+              <img class="opacity-25 reduce-size" src="../../../img/left_arrow.png" alt="&lt;">
+              <img src="../../../img/right_row.png" alt="&gt;">
+            </div>
+          </div>
+        </div>
+        <hr class="mt-3 mb-3 border border-dark w-100">
+        <p class="fw-custom fs-5 mb-5 mb-lg-6 letter-spacing-negative lh-sm">
+          Gestiono todo rápidamente y me desentiendo de la logística y la preocupación de si llegó o no el producto. Son un key importante en HR.
+        </p>
+        <div class="d-flex gap-3">
+          <img src="../../../img/dlocal_client.png" alt="Dlocal logo">
+          <div class="d-flex flex-column ml-2">
+            <p class="fw-medium fs-6 m-0">
+              Florencia López
+            </p>
+            <p class="fw-light fs-7 m-0">
+              Human Resources
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="flex-column d-none d-lg-flex justify-content-between">
+        <div>
+          <img src="../../../img/quote_vector.png" alt="&quot;">
+        </div>
+        <hr class="mt-3 mb-3 border border-dark w-100">
+        <p class="fw-custom fs-5 mb-6 letter-spacing-negative lh-sm">
+          Muchísimas opciones concentradas en un solo lugar.  Poder comparar, elegir y gestionar todo desde la web es increíble.
+        </p>
+        <div class="d-flex gap-3">
+          <img src="../../../img/rootstrap_client.png" alt="Roostrap logo">
+          <div class="d-flex flex-column ml-2">
+            <p class="fw-medium fs-6 m-0">
+              Sandra De La Roche
+            </p>
+            <p class="fw-light fs-7 m-0">
+              Administration Specialist
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container d-flex flex-column justify-content-between align-items-center my-8 gap-4 gap-lg-5">
+    <h2 class="fw-bolder fs-1 text-center lh-base blue-dark-text">
+      ¿Tenés un servicio o producto para ofrecer?
+    </h2>
+    <h6 class="fw-custom fs-5 text-center m-0 lh-sm d-none d-lg-flex">
+      Si ofreces servicios o productos para empresas, PlanIT es el lugar para vos.<br> Escribí tus datos y nos contactaremos contigo.
+    </h6>
+    <h4 class="fw-bold text-center m-0 lh-sm d-lg-none">
+      Si ofreces servicios o productos para empresas, PlanIT es el lugar para vos. Dejanos tus datos y nos contactaremos contigo a la brevedad.
+    </h4>
+    <div>
+      <button class="btn shadow rounded border-0 dark-blue-gradient text-white fs-6 fw-bold px-5 py-2 mt-4">
+      QUIERO SER PARTE
+    </button>
+    </div>
+  </div>
+  <div class="container-fluid bg-custom-blue rounded-top-5 mt-8">
+    <div class="container d-flex flex-column">
+      <div class="d-flex flex-column flex-lg-row justify-content-between mt-4 gap-5 mt-5 mt-lg-6">
+        <h1 class="fw-bolder fs-0 text-white lh-sm m-0">
+          ¿Listo para organizarte <span class="text-custom-blue-light">10 veces</span> más rápido?
+        </h1>
+        <div class="d-flex flex-column justify-content-between w-100">
+          <div class="mb-1 fs-6 fs-xl-5 fw-medium d-flex flex-column justify-content-between gap-3">
+            <input type="text" placeholder="Empresa" class="w-100 bg-transparent border-bottom border-white border-0 mb-5 placeholder-white text-white">
+            <input type="text" placeholder="Email" class="w-100 bg-transparent border-bottom border-white border-0 mb-5 placeholder-white text-white">
+            <input type="text" placeholder="Mensaje" class="w-100 bg-transparent border-bottom border-white border-0 mb-5 placeholder-white text-white">
+          </div>
+          <button class="btn shadow rounded bg-white border-0 mt-3 mb-6 mb-lg-0">
+            <span class="dark-blue-gradient text-transparent background-clip-text fs-6 fw-medium m-0 py-1">
+              ENVIAR
+            </span>
+          </button>
+        </div>
+      </div>
+      <div class="d-flex flex-column gap-3 mb-7 mt--1 mb-lg-8">
+        <div class="d-flex align-items-center gap-2">
+          <div class="align-items-center rounded d-flex justify-content-center bg-white">
+            <img class="p-2" src="../../../img/user_blue_icon.png" alt="User">
+          </div>
+          <p class="fs-5 fw-bold letter-spacing-negative m-0 text-white text-nowrap">Para personas &nbsp; &gt;</p>
+        </div>
+        <div class="fs-6 fw-light letter-spacing-negative">
+          <p class="m-0 text-white">En PlanIT también podés encontrar regalos para tu familia y amigos.</p>
+        </div>
+      </div>
+      <div class="d-flex flex-column justify-content-between mt-5 mb-6 fs-6 gap-2 pt-7">
+        <div class="d-flex mb-4 mb-lg-3">
+          <img src="../../../img/logo_white.png" alt="PlanIT">
+        </div>
+        <div class="d-flex flex-column flex-lg-row justify-content-between fw-light fs-7">
+          <div class="d-lg-none">
+            <div class="d-flex justify-content-between">
+              <p class="text-white m-0">info@planit.com.uy</p>
+              <p class="text-white m-0"> &nbsp; Tel: +598 96593615</p>
+            </div>
+          </div>
+          <hr class="border border-dark w-100 border-white d-lg-none my-3">
+          <div class="d-flex justify-content-between w-100">
+            <p class="text-white m-0">
+              PlanIT, 2021 - All rights reserved
+            </p>
+            <div class="d-flex d-none d-lg-flex">
+              <p class="text-white">info@planit.com.uy</p>
+              <p class="text-white d-none d-lg-flex">&nbsp; &middot;</p>
+              <p class="text-white"> &nbsp; Tel: +598 96593615</p>
+              <p class="text-white d-none d-lg-flex">&nbsp; &middot;</p>
+              <p class="text-white d-none d-lg-flex">&nbsp; Tel: +598 97304031</p>
+            </div>
+            <div class="d-flex gap-3 gap-sm-1">
+              <img class="object-fit-contain mx-1 reduce-size" src="../../../img/facebook.png" alt="Facebook">
+              <img class="object-fit-contain mx-1 reduce-size" src="../../../img/linkedin.png" alt="Linkedin">
+              <img class="object-fit-contain mx-1 reduce-size" src="../../../img/twitter.png" alt="Twitter">
+              <img class="object-fit-contain mx-1 reduce-size" src="../../../img/instagram.png" alt="Instagram">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

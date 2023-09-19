@@ -1,6 +1,79 @@
+@import 'variables';
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 
+* {
+  color: var(--bs-dark);
+  font-family: $default-font-family;
+  text-decoration: none;
+}
 
+.dark-blue-gradient { background: $dark-gradient }
+.light-blue-gradient { background: $light-gradient }
+.background-clip-text { background-clip: text; -webkit-background-clip: text; }
+.text-transparent { color: transparent; }
 
+.div-gradient {
+  background-image: linear-gradient(46.99deg, #0F58B7 -4.4%, #62D9FF 120.42%);
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
 
+.letter-spacing-negative { letter-spacing: -1px; }
+
+.custom-list {
+  list-style-type: none;
+  padding-left: 0;
+  > li {
+    background-image: url('../../../../img/tic.png');
+    background-position: 0 5px;
+    background-repeat: no-repeat;
+    margin: 0.9rem 0;
+    padding-left: 30px;
+  }
+}
+
+.fw-custom {
+  font-weight: 600;
+  @include media-breakpoint-up(lg) {
+    font-weight: 400;
+  }
+}
+
+.bg-ivory-white {
+  background-color: var(--bs-custom-ivory);
+  @include media-breakpoint-up(lg) {
+      background-color: white;
+  }
+}
+
+.blue-dark-text {
+  color: var(--bs-custom-blue);
+  @include media-breakpoint-up(lg) {
+      color: $dark;
+  }
+}
+
+.placeholder-white::placeholder { color: $light; }
+
+@media only screen and (max-width: 992px) {
+
+  .w-100-mobile {
+    width: 100%;
+  }
+
+  .carrousel {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    width: 100%;
+  }
+
+  .carrousel-photo {
+    border-radius: 5px;
+    height: 120px;
+    object-fit: cover;
+    width: 100%;
+  }
+}
 
