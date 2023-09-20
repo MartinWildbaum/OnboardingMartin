@@ -13,9 +13,9 @@
 .text-transparent { color: transparent; }
 
 .div-gradient {
+  background-clip: text;
   background-image: linear-gradient(46.99deg, #0F58B7 -4.4%, #62D9FF 120.42%);
   display: inline-block;
-  background-clip: text;
   -webkit-background-clip: text;
 }
 
@@ -25,7 +25,7 @@
   list-style-type: none;
   padding-left: 0;
   > li {
-    background-image: url('../../../../img/tic.png');
+    background-image: url('../../../img/tic.png');
     background-position: 0 5px;
     background-repeat: no-repeat;
     margin: 0.9rem 0;

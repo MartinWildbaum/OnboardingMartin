@@ -3,7 +3,6 @@
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/variables-dark";
 
-
 $default-font-family: 'Poppins', sans-serif;
 
 $dark-gradient: linear-gradient(46.99deg, #0F58B7 -4.4%, #62D9FF 120.42%);
@@ -27,7 +26,6 @@ $custom-fs: (
   "7": 0.8rem,
   "0": 3.5rem,
 );
-
 
 $theme-colors: map-merge($map1: $theme-colors, $map2: $custom-colors);
 $font-sizes: map-merge($map1: $font-sizes, $map2: $custom-fs);
