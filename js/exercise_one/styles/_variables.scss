@@ -1,0 +1,14 @@
+@use "sass:map";
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+$default-font-family: 'Poppins', sans-serif;
+
+$custom-colors: (
+  "custom-skyblue": #51d1f6,
+  "custom-green": #9acd32,
+  "custom-blue": #00bfff,
+);
+
+$theme-colors: map-merge($map1: $theme-colors, $map2: $custom-colors);
