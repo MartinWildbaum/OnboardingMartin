@@ -1,21 +1,80 @@
-//  Show form to add item
-function showForm() {
-  document.getElementById('form').classList.remove('d-none');
+function sortTableByCost(table) {
+
+  const tBody = table.tBodies[0];
+  const rows = Array.from(tBody.querySelectorAll("tr"));
+
+  const sortedRows = rows.sort((a, b) => {
+    const aCost = parseFloat(a.querySelector(`td:nth-child(${ 1 + 1})`).textContent.substring(1));
+    const bCost = parseFloat(b.querySelector(`td:nth-child(${ 1 + 1})`).textContent.substring(1));
+    return aCost >= bCost ? 1 : -1;
+  });
+
+  while(tBody.firstChild){ // ACA SE TRANCA
+    tBody.removeChild(tBody.firstChild);
+  }
+  tBody.append(...sortedRows);
 }
 
-// Close form
-function closeForm() {
-  document.getElementById('form').classList.add('d-none');
+function chackAffordableItems(budget, table) {
+
+  const rows = table.getElementsByTagName('tr');
+  for (let i = 1; i < rows.length; i++) {
+    const row = rows[i];
+    const cells = row.getElementsByTagName('td');
+
+    if (cells.length >= 2) {
+      const cost = parseFloat(cells[1].textContent.substring(1));
+      const checkbox = cells[2].querySelector('input[type="checkbox"]');
+
+      if (cost <= budget) {
+        checkbox.checked = true;
+        budget -= cost;
+        console.log("entro");
+      } else {
+        checkbox.checked = false;
+        break;
+      }
+    }
+  }
 }
+
+//  Optimize list
+function optimize() {
+
+  const budget = parseFloat(document.getElementById('budget').value);
+  document.getElementById('title-budget').innerHTML = budget;
+
+  if (isNaN(budget)) {
+    // Do nothing
+    return;
+  }
+
+  const table = document.querySelector('table');
+  sortTableByCost(table);
+
+  // Clean forms fields
+  document.getElementById('budget').value = '';
+  $('#modalOptimize').modal('hide');
+  chackAffordableItems(budget, table);
+}
+
+
+
 
 // Function to add a new item on table
 function addItem() {
+
   const description = document.getElementById('description').value;
   const cost = document.getElementById('cost').value;
 
-  // Add a new row to the table
-  const table = document.querySelector('table tbody');
+  if (!description.length || isNaN(cost)) {
+    // Do nothing
+    return;
+  }
+
+  const table = document.querySelector('table');
   const row = table.insertRow();
+
 
   // Insert data
   const cell1 = row.insertCell(0);
@@ -31,69 +90,5 @@ function addItem() {
   document.getElementById('description').value = '';
   document.getElementById('cost').value = '';
 
-  closeForm();
-}
-
-//  Show form to optimize according a budget
-function showFormBudget() {
-  document.getElementById('form-optimize').classList.remove('d-none');
-}
-
-// Close form to optimize
-function closeFormOptimize() {
-  document.getElementById('form-optimize').classList.add('d-none');
-}
-
-//  Optimize list
-function optimize() {
-  const budget = parseFloat(document.getElementById('budget').value);
-
-  document.getElementById('title-budget').innerHTML = budget;
-
-  //Optimize according to the budget
-  if (isNaN(budget)) {
-    // Do nothing
-    return;
-  }
-  const table = document.getElementById("table");
-  var switching, shouldSwitch, rows, i, x, y;
-
-  switching = true;
-
-  while (switching) {
-
-    switching=false;
-    rows=table.rows;
-
-    for(i = 1; i < (rows.length - 1); i++){
-      shouldSwitch = false;
-      x = rows[i].cells[1];
-      y = rows[i + 1].cells[1];
-      if (parseFloat(x.textContent.substring(1)) > parseFloat(y.textContent.substring(1))) {
-        shouldSwitch = true;
-        break;
-      }
-    }
-    if (shouldSwitch) {
-      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-      switching = true;
-    }
-  }
-
-  let remainingAmount = budget;
-  var cost;
-  for (const row of rows) {
-    cost = parseFloat(row.cells[1].textContent.substring(1));
-    if (!row.cells[2].checked && cost <= remainingAmount) {
-      remainingAmount -= cost;
-      console.log(row.cells[2].content.checked);
-      row.geet = true;
-      console.log(row.cells[2].checked);
-    }
-  }
-
-  // Clean forms fields
-  document.getElementById('budget').value = '';
-
-  closeFormOptimize();
+  $('#modalCreate').modal('hide');
 }
