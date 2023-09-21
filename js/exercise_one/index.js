@@ -58,9 +58,6 @@ function optimize() {
   chackAffordableItems(budget, table);
 }
 
-
-
-
 // Function to add a new item on table
 function addItem() {
 
@@ -74,7 +71,6 @@ function addItem() {
 
   const table = document.querySelector('table');
   const row = table.insertRow();
-
 
   // Insert data
   const cell1 = row.insertCell(0);
