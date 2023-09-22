@@ -1,16 +1,13 @@
 function sortTableByCost(table) {
   const tBody = table.tBodies[0];
-  const rows = Array.from(tBody.querySelectorAll("tr"));
+  const rows = Array.from(tBody.querySelectorAll('tr'));
 
   const sortedRows = rows.sort((a, b) => {
-    const aCost = parseFloat(a.getElementsByTagName("td")[1].textContent.substring(1));
-    const bCost = parseFloat(b.getElementsByTagName("td")[1].textContent.substring(1));
+    const aCost = parseFloat(a.getElementsByTagName('td')[1].textContent.substring(1));
+    const bCost = parseFloat(b.getElementsByTagName('td')[1].textContent.substring(1));
     return aCost - bCost;
   });
 
-  while(tBody.firstChild){
-    tBody.removeChild(tBody.firstChild);
-  }
   tBody.append(...sortedRows);
 }
 
@@ -68,7 +65,7 @@ function addItem() {
   cell2.innerHTML = `$ ${cost}`;
 
   const cell3 = row.insertCell(2);
-  cell3.innerHTML = '<input type="checkbox">'; // Consultar como es la alternativa mas correcta!
+  cell3.innerHTML = '<input type="checkbox">';
 
   // Clean forms fields
   document.getElementById('description').value = '';
@@ -92,15 +89,19 @@ function saveNewRow(){
     data.push({ name, cost, completed });
     localStorage.setItem('wishlistData', JSON.stringify(data));
   }
+  attachCheckboxEventListeners();
 }
 
-// Function to attach event listeners to checkboxes
-function attachCheckboxEventListeners() {
-    const checkboxes = document.querySelectorAll("#table tbody input[type='checkbox']");
-
-    checkboxes.forEach((checkbox) => {
-        checkbox.addEventListener("change", saveToLocalStorage);
-    });
+function insertSavedRows(tableBody, savedRows) {
+  savedRows.forEach((item) => {
+    const newRow = document.createElement('tr');
+    newRow.innerHTML = `
+      <td>${item.name}</td>
+      <td>${item.cost}</td>
+      <td><input type="checkbox" ${item.completed ? 'checked' : ''}></td>`;
+    tableBody.appendChild(newRow);
+  });
+  attachCheckboxEventListeners();
 }
 
 // Function to load table data from localStorage and populate the table
@@ -112,15 +113,22 @@ function loadTableData() {
     const tableBody = document.querySelector('#table tbody');
     tableBody.innerHTML = '';
 
-    data.forEach((item) => {
-      const newRow = document.createElement('tr');
-      newRow.innerHTML = `
-        <td>${item.name}</td>
-        <td>${item.cost}</td>
-        <td><input type="checkbox" ${item.completed ? 'checked' : ''}></td>`;
-      tableBody.appendChild(newRow);
-    });
-    attachCheckboxEventListeners();
+    insertSavedRows(tableBody, data);
+  } else {
+    const tableBody = document.querySelector('#table tbody');
+
+    // Hardcoded rows
+    const hardcodedData = [
+      { name: 'Ruby Metaprogramming Book', cost: '$ 500', completed: false },
+      { name: 'MacBook Pro', cost: '$ 1300', completed: false },
+      { name: 'Electric Bike', cost: '$ 670', completed: false },
+      { name: 'Sennheiser Headphones', cost: '$ 180', completed: false },
+      { name: 'home Brew Beer Kit', cost: '$ 320', completed: false },
+      { name: 'asdasd', cost: '$ 320', completed: false },
+    ];
+    localStorage.setItem('wishlistData', JSON.stringify(hardcodedData));
+
+    insertSavedRows(tableBody, hardcodedData);
   }
 }
 
