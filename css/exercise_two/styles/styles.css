@@ -14468,9 +14468,9 @@ textarea.form-control-lg {
 }
 
 .div-gradient {
+  background-clip: text;
   background-image: linear-gradient(46.99deg, #0F58B7 -4.4%, #62D9FF 120.42%);
   display: inline-block;
-  background-clip: text;
   -webkit-background-clip: text;
 }
 
@@ -14483,7 +14483,7 @@ textarea.form-control-lg {
   padding-left: 0;
 }
 .custom-list > li {
-  background-image: url("../../../../img/tic.png");
+  background-image: url("../../../img/tic.png");
   background-position: 0 5px;
   background-repeat: no-repeat;
   margin: 0.9rem 0;
@@ -14517,12 +14517,26 @@ textarea.form-control-lg {
   }
 }
 
+@media (max-width: 991.98px) {
+  .free-try-button {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .placeholder-white::-moz-placeholder {
   color: #f8f9fa;
 }
 
 .placeholder-white::placeholder {
   color: #f8f9fa;
+}
+
+@media (min-width: 992px) {
+  .w-lg-50 {
+    width: 50%;
+  }
 }
 
 @media only screen and (max-width: 992px) {

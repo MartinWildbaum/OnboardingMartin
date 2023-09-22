@@ -1,22 +1,20 @@
 function sortTableByCost(table) {
-
   const tBody = table.tBodies[0];
   const rows = Array.from(tBody.querySelectorAll("tr"));
 
   const sortedRows = rows.sort((a, b) => {
-    const aCost = parseFloat(a.querySelector(`td:nth-child(${ 1 + 1})`).textContent.substring(1));
-    const bCost = parseFloat(b.querySelector(`td:nth-child(${ 1 + 1})`).textContent.substring(1));
-    return aCost >= bCost ? 1 : -1;
+    const aCost = parseFloat(a.getElementsByTagName("td")[1].textContent.substring(1));
+    const bCost = parseFloat(b.getElementsByTagName("td")[1].textContent.substring(1));
+    return aCost - bCost;
   });
 
-  while(tBody.firstChild){ // ACA SE TRANCA
+  while(tBody.firstChild){
     tBody.removeChild(tBody.firstChild);
   }
   tBody.append(...sortedRows);
 }
 
 function chackAffordableItems(budget, table) {
-
   const rows = table.getElementsByTagName('tr');
   for (let i = 1; i < rows.length; i++) {
     const row = rows[i];
@@ -29,10 +27,8 @@ function chackAffordableItems(budget, table) {
       if (cost <= budget) {
         checkbox.checked = true;
         budget -= cost;
-        console.log("entro");
       } else {
         checkbox.checked = false;
-        break;
       }
     }
   }
@@ -40,14 +36,10 @@ function chackAffordableItems(budget, table) {
 
 //  Optimize list
 function optimize() {
-
   const budget = parseFloat(document.getElementById('budget').value);
   document.getElementById('title-budget').innerHTML = budget;
 
-  if (isNaN(budget)) {
-    // Do nothing
-    return;
-  }
+  if(isNaN(budget)) return;
 
   const table = document.querySelector('table');
   sortTableByCost(table);
@@ -60,14 +52,10 @@ function optimize() {
 
 // Function to add a new item on table
 function addItem() {
-
   const description = document.getElementById('description').value;
   const cost = document.getElementById('cost').value;
 
-  if (!description.length || isNaN(cost)) {
-    // Do nothing
-    return;
-  }
+  if (!description.length || isNaN(cost)) return;
 
   const table = document.querySelector('table');
   const row = table.insertRow();
@@ -77,14 +65,80 @@ function addItem() {
   cell1.innerHTML = description;
 
   const cell2 = row.insertCell(1);
-  cell2.innerHTML = "$ " + cost;
+  cell2.innerHTML = `$ ${cost}`;
 
   const cell3 = row.insertCell(2);
-  cell3.innerHTML = '<input type="checkbox">';
+  cell3.innerHTML = '<input type="checkbox">'; // Consultar como es la alternativa mas correcta!
 
   // Clean forms fields
   document.getElementById('description').value = '';
   document.getElementById('cost').value = '';
 
   $('#modalCreate').modal('hide');
+
+  saveNewRow();
+}
+
+function saveNewRow(){
+  const table = document.querySelector('#table tbody');
+  const lastRow = table.lastElementChild;
+
+  if (lastRow) {
+    const name = lastRow.cells[0].textContent;
+    const cost = lastRow.cells[1].textContent;
+    const completed = lastRow.cells[2].querySelector('input').checked;
+
+    const data = JSON.parse(localStorage.getItem('wishlistData')) || [];
+    data.push({ name, cost, completed });
+    localStorage.setItem('wishlistData', JSON.stringify(data));
+  }
+}
+
+// Function to attach event listeners to checkboxes
+function attachCheckboxEventListeners() {
+    const checkboxes = document.querySelectorAll("#table tbody input[type='checkbox']");
+
+    checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", saveToLocalStorage);
+    });
+}
+
+// Function to load table data from localStorage and populate the table
+function loadTableData() {
+  const savedData = localStorage.getItem('wishlistData');
+
+  if (savedData) {
+    const data = JSON.parse(savedData);
+    const tableBody = document.querySelector('#table tbody');
+    tableBody.innerHTML = '';
+
+    data.forEach((item) => {
+      const newRow = document.createElement('tr');
+      newRow.innerHTML = `
+        <td>${item.name}</td>
+        <td>${item.cost}</td>
+        <td><input type="checkbox" ${item.completed ? 'checked' : ''}></td>`;
+      tableBody.appendChild(newRow);
+    });
+    attachCheckboxEventListeners();
+  }
+}
+
+// Load data from localStorage when the page loads
+loadTableData();
+
+function attachCheckboxEventListeners() {
+  const checkboxes = document.querySelectorAll('#table tbody input[type="checkbox"]');
+
+  checkboxes.forEach((checkbox, index) => {
+    checkbox.addEventListener('change', () => {
+      const savedData = localStorage.getItem('wishlistData');
+
+      if (savedData) {
+        const data = JSON.parse(savedData);
+        data[index].completed = checkbox.checked;
+        localStorage.setItem('wishlistData', JSON.stringify(data));
+      }
+    });
+  });
 }
