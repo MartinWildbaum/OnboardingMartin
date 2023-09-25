@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise one JS</title>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid bg-custom-skyblue py-5 px-5">
+      <div class="conatiner d-flex flex-column gap-5 text-white">
+        <h1 class="fw-normal">
+          Js recruiting test
+        </h1>
+        <p class="fw-light fs-3">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        </p>
+        <h2 class="fw-normal">
+          Budget: $ <span id="title-budget">0</span>
+        </h2>
+        <table class="w-75 fs-5 letter-spacing-lg fw-light" id="table">
+          <thead>
+              <tr class="text-center">
+                  <th class="bg-custom-green col-7">Wishlist</th>
+                  <th class="bg-custom-green col-2 border-5 border-custom-skyblue border-top-0 border-bottom-0 border-right-5 border-left-5">Cost</th>
+                  <th class="bg-custom-green col-3">Completed?</th>
+              </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <div class="d-flex flex-row gap-3 align-items-end">
+          <button type="button" class="btn bg-transparent border border-light border-3 text-white fs-3 letter-spacing-xl fw-bold px-4 py-1 shadow" data-toggle="modal" data-target="#modalCreate">
+            ADD
+          </button>
+          <button type="button" class="btn bg-white text-custom-skyblue border-0 fs-6 letter-spacing-lg px-5 py-1 h-75 shadow" data-toggle="modal" data-target="#modalOptimize">
+            OPTIMIZE
+          </button>
+        </div>
+        <div class="modal fade" id="modalCreate" tabindex="-1" role="dialog" aria-labelledby="modalCreateTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-custom-green align-items-center">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalLongTitle">Add Item</h5>
+              </div>
+              <div class="modal-body">
+                <label class="fw-light" for="description">Name:</label><br>
+                <input class="border-0" type="text" id="description" required><br><br>
+                <label class="fw-light" for="cost">Cost:</label><br>
+                <input class="border-0 mb-3" type="number" id="cost" required><br><br>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn fw-bold mb-4 text-custom-blue bg-white" onclick="addItem()">CREATE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="modalOptimize" tabindex="-1" role="dialog" aria-labelledby="modalOptimizeTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content bg-custom-green align-items-center">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalLongTitle">Optimize list</h5>
+              </div>
+              <div class="modal-body">
+                <label class="fw-light">Available Budget:</label><br>
+                <input class="border-0 mb-3" type="number" id="budget" required><br><br>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn fw-bold mb-4 text-custom-blue bg-white" onclick="optimize()">Optimize</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
