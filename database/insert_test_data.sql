@@ -1,6 +1,10 @@
 -- INSERT TEST DATA
 -- Inserting data into the "users" table
 INSERT INTO onboarding_schema.users (id, name) VALUES
+(1, 'Juan Perez'),
+(2, 'Pedro Garcia'),
+(3, 'Mateo Fuentes'),
+(4, 'Damiano Rodriguez'),
 (5, 'Nicolas Wildbaum'),
 (6, 'Deborah Laufer'),
 (7, 'Micaela Wildbaum');
