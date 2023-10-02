@@ -1,0 +1,16 @@
+@import 'variables';
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+* {
+  font-family: $default-font-family;
+}
+
+.letter-spacing-lg {
+  letter-spacing: 1.5px;
+}
+
+.letter-spacing-xl {
+  letter-spacing: 3px;
+}
+
+::placeholder { color: $light; }
