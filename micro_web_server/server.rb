@@ -9,9 +9,6 @@ DB = PG.connect(
   password: ENV['DB_PASS']
 )
 
-set :public_folder, File.dirname(__FILE__) + '/public'
-set :views, File.join(File.dirname(__FILE__), 'views')
-
 $items = WishlistItem.all
 $budget = 1000 # Initial budget
 
@@ -59,11 +56,11 @@ end
 
 get '/search' do
   search_query = params[:text_to_filter]
-  if search_query
+  @filtered_items = if search_query
     # Decided not to make it case sensitive.
-    @filtered_items = $items.select { |item| item.name.downcase.include?(search_query.downcase) }
+    $items.select { |item| item.name.downcase.include?(search_query.downcase) }
   else
-    @filtered_items = $items
+    $items
   end
   erb :index
 end
